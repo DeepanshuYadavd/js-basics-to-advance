@@ -1,0 +1,5 @@
+Intro to js and variables
+
+string and its methods , prototype
+
+Number and its methods, prototype
