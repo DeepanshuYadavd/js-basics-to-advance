@@ -79,13 +79,70 @@
 // const total = arr2.customSum((value) => value);
 // console.log(total);
 
-const arr = [12, 13, 14, 6, 8];
+// const arr = [12, 13, 14, 6, 8];
 
-Array.prototype.sum = function () {
-  let sum = 0;
-  for (let v of this) {
-    sum += v;
-  }
-  return sum;
-};
-console.log(arr.sum());
+// Array.prototype.sum = function () {
+//   let sum = 0;
+//   for (let v of this) {
+//     sum += v;
+//   }
+//   return sum;
+// };
+// console.log(arr.sum());
+
+//  for each loop:
+// let arr = ["a", "b", "c"];
+
+// const test = arr.forEach((item, index, whole_array) => {
+//   console.log(item, index, whole_array);
+//   return;
+// });
+
+// console.log(test);
+
+// const arr = [1, 2, 3, 4, 5, 6];
+
+// const test = arr.forEach((item) => {
+//   console.log(item * 2);
+//   return item * 2;
+// });
+
+// console.log(test);
+
+// const result = arr.map((item) => {
+//   return item * 2;
+// });
+
+// console.log(result);
+
+// let prices = [100, 200, 300];
+// //  return new array with 18 % gst
+// const gstPrice = prices.map((price) => price + price * 0.18);
+// console.log(gstPrice);
+
+//  filter :
+// const arr = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+
+// const even = arr.filter((item) => {
+//   return item % 2 === 0;
+// });
+// console.log(even);
+// const values = [0, "false", "", false, true, 1, "hello"];
+// const result = values.filter((item) => Boolean(item));
+// console.log(result);
+
+//  reduce:
+// const arr = [1, 2, 3, 4, 5];
+
+// let sum = arr.reduce((acc, item) => {
+//   return (acc += item);
+// }, 10);
+
+// console.log(sum);
+
+const arr = [1, 22, 3, 4, 5, 6];
+const result = arr.find((item) => {
+  return item % 2 === 0;
+});
+
+console.log(result);
