@@ -3,3 +3,25 @@ Intro to js and variables
 string and its methods , prototype
 
 Number and its methods, prototype
+
+coercions
+
+control statements and other premetive datatypes
+
+array
+
+functions
+objects
+
+hoisting
+this keyword
+higher order functions
+callbacks
+closures
+
+async js
+
+js dom 
+
+project complete
+
