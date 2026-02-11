@@ -12,16 +12,22 @@ array
 
 functions
 objects
+destructurng
 
 hoisting
 this keyword
-higher order functions
-callbacks
-closures
 
-async js
 
-js dom 
 
-project complete
+call, apply , bind
+spread and rest operator
+date and time
+error handling
+json parse stringify
+
+
+
+
+
+
 
