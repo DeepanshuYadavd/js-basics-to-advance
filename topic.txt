@@ -1,3 +1,5 @@
+*********************java script******************************
+
 Intro to js and variables
 
 string and its methods , prototype
@@ -21,9 +23,49 @@ this keyword
 
 call, apply , bind
 spread and rest operator
+
 date and time
 error handling
-json parse stringify
+json parse stringify 
+
+
+higher order functions
+callbacks
+
+closures and lexical scope
+
+
+
+asynchronous js
+callstack and memory heap
+event loop
+
+promises
+async await
+web apis
+set timeout and setinterval
+
+
+classes and oops 
+modules (import / export)
+
+garbage collection
+
+js engine
+signle threaded nature
+microtasks and macrotasks
+
+dom 
+events and events delegation
+
+project of travel and fashion
+
+
+************************react***********************
+
+
+
+
 
 
 
