@@ -24,14 +24,13 @@ this keyword
 call, apply , bind
 spread and rest operator
 
+
 date and time
 error handling
 json parse stringify 
 
-
 higher order functions
 callbacks
-
 closures and lexical scope
 
 
