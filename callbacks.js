@@ -30,13 +30,13 @@
 // const triple = multiply(5);
 // const result = triple(6);
 // console.log(result);
-function outer() {
-  let count = 0;
-  function increment() {
-    count++;
-    console.log(count);
-  }
-  return increment;
-}
-const result = outer();
-console.log(result());
+// function outer() {
+//   let count = 0;
+//   function increment() {
+//     count++;
+//     console.log(count);
+//   }
+//   return increment;
+// }
+// const result = outer();
+// console.log(result());
