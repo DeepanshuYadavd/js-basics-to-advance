@@ -39,6 +39,4 @@ function outer() {
   return increment;
 }
 const result = outer();
-result();
-result();
-result();
+console.log(result());
