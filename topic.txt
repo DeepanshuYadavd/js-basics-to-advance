@@ -34,25 +34,26 @@ asynchronous js
 callstack and memory heap
 event loop
 
-promises
-async await
 web apis
 set timeout and setinterval
+promises
+async await
+
 
 
 classes and oops 
 modules (import / export)
 
 garbage collection
-
 js engine
 single threaded nature
 microtasks and macrotasks
 
+
 dom 
 events and events delegation
-
 project of travel and fashion
+
 ************************react***********************
 
 
