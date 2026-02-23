@@ -35,6 +35,8 @@ callstack and memory heap
 event loop
 
 web apis
+single threaded nature
+microtasks and macrotasks
 set timeout and setinterval
 promises
 async await
@@ -44,10 +46,9 @@ async await
 classes and oops 
 modules (import / export)
 
+
 garbage collection
 js engine
-single threaded nature
-microtasks and macrotasks
 
 
 dom 
