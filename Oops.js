@@ -110,48 +110,164 @@
 // console.log(e1);
 // console.log(e1.getDetails());
 
-class RoyalEnfield {
-  constructor(id, bikeName) {
-    this.id = id;
-    this.bikeName = bikeName;
-  }
+// class RoyalEnfield {
+//   constructor(id, bikeName) {
+//     this.id = id;
+//     this.bikeName = bikeName;
+//   }
 
-  bikeReady() {
-    return `${this.bikeName} (ID: ${this.id}) is ready to go!`;
+//   bikeReady() {
+//     return `${this.bikeName} (ID: ${this.id}) is ready to go!`;
+//   }
+// }
+
+// class Classic350 extends RoyalEnfield {
+//   constructor(id, bikeName, cc) {
+//     super(id, bikeName);
+//     this.cc = cc;
+//   }
+
+//   bikeReady() {
+//     console.log(super.bikeReady());
+
+//     console.log(this);
+//     return `${this.bikeName} (ID: ${this.id}, ${this.cc}cc) is ready to cruise!`;
+//   }
+// }
+
+// class ContinentalGT extends RoyalEnfield {
+//   constructor(id, bikeName, cc) {
+//     super(id, bikeName);
+//     this.cc = cc;
+//   }
+
+//   bikeReady() {
+//     console.log(super.bikeReady());
+//     console.log(this);
+//     return `${this.bikeName} (ID: ${this.id}, ${this.cc}cc) is ready to race!`;
+//   }
+// }
+
+// const bike1 = new Classic350(102, "Classic 350", 350);
+// const bike2 = new ContinentalGT(103, "Continental GT 650", 650);
+
+// console.log("-----Classic 350----");
+// console.log(bike1.bikeReady());
+// console.log("-----Continental GT----");
+// console.log(bike2.bikeReady());
+
+// multi level inheritance:
+//  grandparent:
+// class vehicle {
+//   constructor(type) {
+//     this.type = type;
+//   }
+//   start() {
+//     console.log("vehicle started");
+//   }
+// }
+// // parent:
+// class RoyalEnfield extends vehicle {
+//   constructor(type, brand) {
+//     super(type);
+//     this.brand = brand;
+//   }
+//   readyToGo() {
+//     console.log("royal enfield is ready to go");
+//   }
+// }
+// //  child:
+// class meteor650 extends RoyalEnfield {
+//   constructor(type, brand, cc) {
+//     super(type, brand);
+//     this.cc = cc;
+//   }
+//   readyToGo() {
+//     super.readyToGo();
+//     console.log("meteor is ready to go");
+//   }
+// }
+// const meteor = new meteor650("bike", "RE", 650);
+// meteor.start();
+// meteor.readyToGo();
+
+//  hierarchy inheri...
+// class user {
+//   constructor(name) {
+//     this.name = name;
+//   }
+//   login() {
+//     console.log(`${this.name} logged in`);
+//   }
+// }
+// //  child 1
+// class admin extends user {
+//   deleteUser() {
+//     console.log(`${this.name} deleted a user`);
+//   }
+// }
+// //  child 2
+// class customer extends user {
+//   buyProduct() {
+//     console.log(`${this.name} buy a product`);
+//   }
+// }
+// const a = new admin("deep");
+// const c = new customer("dhanjal");
+// a.login();
+// c.login();
+// a.deleteUser();
+// c.buyProduct();
+
+//  mixin:
+// class animal {
+//   eat() {
+//     console.log("eating");
+//   }
+// }
+// //  mixin:
+// const canrun = (base) =>
+//   class extends base {
+//     run() {
+//       console.log("running");
+//     }
+//   };
+// class dog extends canrun(animal) {}
+// const d = new dog();
+// d.eat();
+// d.run();
+
+//  problem : multiple inheritance (diamond problem)
+class person {
+  constructor(name) {
+    this.name = name;
+  }
+  breathe() {
+    console.log(`${this.name} is breathing`);
   }
 }
 
-class Classic350 extends RoyalEnfield {
-  constructor(id, bikeName, cc) {
-    super(id, bikeName);
-    this.cc = cc;
-  }
+//  first mixin:
+const canrun = (base) =>
+  class extends base {
+    swim() {
+      console.log(`${this.name} is swimming of can run`);
+    }
+  };
 
-  bikeReady() {
-    console.log(super.bikeReady());
-
-    console.log(this);
-    return `${this.bikeName} (ID: ${this.id}, ${this.cc}cc) is ready to cruise!`;
-  }
-}
-
-class ContinentalGT extends RoyalEnfield {
-  constructor(id, bikeName, cc) {
-    super(id, bikeName);
-    this.cc = cc;
-  }
-
-  bikeReady() {
-    console.log(super.bikeReady());
-    console.log(this);
-    return `${this.bikeName} (ID: ${this.id}, ${this.cc}cc) is ready to race!`;
+//  second mixin:
+const canswim = (base) =>
+  class extends base {
+    swim() {
+      console.log(`${this.name} is swimming of can swim`);
+    }
+  };
+class athelete extends canrun(canswim(person)) {
+  train() {
+    console.log(`${this.name} is training`);
   }
 }
-
-const bike1 = new Classic350(102, "Classic 350", 350);
-const bike2 = new ContinentalGT(103, "Continental GT 650", 650);
-
-console.log("-----Classic 350----");
-console.log(bike1.bikeReady());
-console.log("-----Continental GT----");
-console.log(bike2.bikeReady());
+const a = new athelete("Deepanshu");
+a.train();
+a.swim();
+a.breathe();
