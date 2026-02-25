@@ -238,36 +238,122 @@
 // d.run();
 
 //  problem : multiple inheritance (diamond problem)
-class person {
-  constructor(name) {
-    this.name = name;
-  }
-  breathe() {
-    console.log(`${this.name} is breathing`);
-  }
-}
+// class person {
+//   constructor(name) {
+//     this.name = name;
+//   }
+//   breathe() {
+//     console.log(`${this.name} is breathing`);
+//   }
+// }
 
-//  first mixin:
-const canrun = (base) =>
-  class extends base {
-    swim() {
-      console.log(`${this.name} is swimming of can run`);
-    }
-  };
+// //  first mixin:
+// const canrun = (base) =>
+//   class extends base {
+//     swim() {
+//       console.log(`${this.name} is swimming of can run`);
+//     }
+//   };
 
 //  second mixin:
-const canswim = (base) =>
-  class extends base {
-    swim() {
-      console.log(`${this.name} is swimming of can swim`);
+// const canswim = (base) =>
+//   class extends base {
+//     swim() {
+//       console.log(`${this.name} is swimming of can swim`);
+//     }
+//   };
+// class athelete extends canrun(canswim(person)) {
+//   train() {
+//     console.log(`${this.name} is training`);
+//   }
+// }
+// const a = new athelete("Deepanshu");
+// a.train();
+// a.swim();
+// a.breathe();
+
+//  polymorphism:
+
+// class shape {
+//   draw() {
+//     console.log("drawing shape");
+//   }
+// }
+// class circle extends shape {
+//   draw() {
+//     console.log("drawing circle");
+//   }
+// }
+// class square extends shape {
+//   draw() {
+//     console.log("drawing square");
+//   }
+// }
+// const shapes = [new circle(), new square()];
+// shapes.forEach((obj) => {
+//   obj.draw();
+// });
+
+//  encapsulation:
+// class counter {
+//   #count; //private
+//   constructor(start = 1) {
+//     this.#count = start;
+//   }
+//   increment() {
+//     this.#count++;
+//   }
+//   getcount() {
+//     console.log(this.#count, this);
+//   }
+//   obj() {
+//     return this;
+//   }
+// }
+// const c = new counter(7);
+// c.increment();
+// c.getcount();
+// console.log(c.#count);
+
+class bankAccount {
+  #balance; //private
+  constructor(accountholder, initialbalance) {
+    this.accountholder = accountholder;
+    this.#balance = initialbalance;
+  }
+  #isValidAmount(amount) {
+    return amount > 0;
+  }
+  getbalance() {
+    return this.#balance;
+  }
+  deposite(amount) {
+    if (this.#isValidAmount(amount)) {
+      this.#balance += amount;
+      console.log("amount deposited");
+    } else {
+      console.log("invalid deposite");
     }
-  };
-class athelete extends canrun(canswim(person)) {
-  train() {
-    console.log(`${this.name} is training`);
+  }
+
+  withdraw(amount) {
+    if (this.#isValidAmount(amount) && amount <= this.#balance) {
+      this.#balance -= amount;
+      console.log("amount withdrawel");
+    } else {
+      console.log("insuficiant balance");
+    }
   }
 }
-const a = new athelete("Deepanshu");
-a.train();
-a.swim();
-a.breathe();
+
+const p1 = new bankAccount("harman", 1000);
+console.log(p1.getbalance());
+p1.deposite(-1000);
+console.log(p1.getbalance());
+p1.withdraw(500);
+console.log(p1.getbalance());
+const p2 = new bankAccount("harshita", 10000);
+console.log(p2.getbalance());
+p2.withdraw();
+console.log(p2.getbalance());
+console.log(p1.getbalance());
