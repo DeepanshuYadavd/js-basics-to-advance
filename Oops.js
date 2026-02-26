@@ -315,45 +315,67 @@
 // c.getcount();
 // console.log(c.#count);
 
-class bankAccount {
-  #balance; //private
-  constructor(accountholder, initialbalance) {
-    this.accountholder = accountholder;
-    this.#balance = initialbalance;
-  }
-  #isValidAmount(amount) {
-    return amount > 0;
-  }
-  getbalance() {
-    return this.#balance;
-  }
-  deposite(amount) {
-    if (this.#isValidAmount(amount)) {
-      this.#balance += amount;
-      console.log("amount deposited");
-    } else {
-      console.log("invalid deposite");
-    }
-  }
+// class bankAccount {
+//   #balance; //private
+//   constructor(accountholder, initialbalance) {
+//     this.accountholder = accountholder;
+//     this.#balance = initialbalance;
+//   }
+//   #isValidAmount(amount) {
+//     return amount > 0;
+//   }
+//   getbalance() {
+//     return this.#balance;
+//   }
+//   deposite(amount) {
+//     if (this.#isValidAmount(amount)) {
+//       this.#balance += amount;
+//       console.log("amount deposited");
+//     } else {
+//       console.log("invalid deposite");
+//     }
+//   }
 
-  withdraw(amount) {
-    if (this.#isValidAmount(amount) && amount <= this.#balance) {
-      this.#balance -= amount;
-      console.log("amount withdrawel");
-    } else {
-      console.log("insuficiant balance");
-    }
+//   withdraw(amount) {
+//     if (this.#isValidAmount(amount) && amount <= this.#balance) {
+//       this.#balance -= amount;
+//       console.log("amount withdrawel");
+//     } else {
+//       console.log("insuficiant balance");
+//     }
+//   }
+// }
+
+// const p1 = new bankAccount("harman", 1000);
+// console.log(p1.getbalance());
+// p1.deposite(-1000);
+// console.log(p1.getbalance());
+// p1.withdraw(500);
+// console.log(p1.getbalance());
+// const p2 = new bankAccount("harshita", 10000);
+// console.log(p2.getbalance());
+// p2.withdraw();
+// console.log(p2.getbalance());
+// console.log(p1.getbalance());
+
+//  getter setter:
+
+class user {
+  constructor(name) {
+    this.naam = name;
+  }
+  //  getter
+  get name() {
+    console.log("running");
+    return this.naam;
+  }
+  //  setter:
+  set name(newName) {
+    console.log("run setter");
+    this.naam = newName;
   }
 }
-
-const p1 = new bankAccount("harman", 1000);
-console.log(p1.getbalance());
-p1.deposite(-1000);
-console.log(p1.getbalance());
-p1.withdraw(500);
-console.log(p1.getbalance());
-const p2 = new bankAccount("harshita", 10000);
-console.log(p2.getbalance());
-p2.withdraw();
-console.log(p2.getbalance());
-console.log(p1.getbalance());
+const u = new user("deepanshu");
+console.log(u.name);
+u.name = "deep"; //setter initialization
+console.log(u.name); //getter initialization
